@@ -1,18 +1,19 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.jokedisplay.JokeActivity;
 import com.example.jokes.Joke;
 import com.example.jokes.JokeMaker;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,20 +47,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        // Get joke from Retrofit service
-        Call<Joke> myJoke = JokeMaker.getJoke();
-
-        myJoke.enqueue(new Callback<Joke>() {
-            @Override
-            public void onResponse(Call<Joke> call, Response<Joke> response) {
-                Toast.makeText(MainActivity.this, response.body().getJoke(), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(Call<Joke> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Call to get joke failed :|", Toast.LENGTH_SHORT).show();
-            }
-        });
+        new JokeEndpointsAsyncTask().execute(this);
     }
 
 
