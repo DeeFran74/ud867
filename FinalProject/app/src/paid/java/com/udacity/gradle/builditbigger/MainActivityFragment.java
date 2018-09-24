@@ -27,6 +27,6 @@ public class MainActivityFragment extends Fragment {
     }
 
     public void tellJoke(View view) {
-        Toast.makeText(this.getContext(), "Please upgrade to paid version to see joke!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this.getContext(), R.string.toast_upgrade_to_paid, Toast.LENGTH_SHORT).show();
     }
 }
