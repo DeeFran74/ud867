@@ -7,14 +7,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivityFragment">
+    tools:context="com.udacity.gradle.builditbigger.MainActivityFragment">
 
     <TextView
         android:id="@+id/instructions_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/instructions"
-        style="@style/Base.TextAppearance.AppCompat.Display4"/>
+        android:text="@string/instructions" />
 
     <Button
         android:id="@+id/tellJokeButton"

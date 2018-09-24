@@ -34,7 +34,7 @@ android {
 
     flavorDimensions "version"
     productFlavors {
-        main {
+        paid {
             applicationId "com.udacity.gradle.builditbigger.paid"
 
         }
